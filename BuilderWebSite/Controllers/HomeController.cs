@@ -13,5 +13,15 @@ namespace BuilderWebSite.Controllers
         {
             return View();
         }
+
+        public ActionResult SliderPartial()
+        {
+            return View();
+        }
+
+        public ActionResult OurServices()
+        {
+            return View();
+        }
     }
 }
