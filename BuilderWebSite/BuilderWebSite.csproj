@@ -330,6 +330,8 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Home\SliderPartial.cshtml" />
     <Content Include="Views\Home\OurServices.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\RecentProjects.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
