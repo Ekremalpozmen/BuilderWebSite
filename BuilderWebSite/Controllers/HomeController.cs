@@ -16,22 +16,32 @@ namespace BuilderWebSite.Controllers
 
         public ActionResult SliderPartial()
         {
-            return View();
+            return PartialView("~/Views/Home/SliderPartial.cshtml");
+
         }
 
         public ActionResult OurServices()
         {
-            return View();
+            return PartialView("~/Views/Home/OurServicesPartial.cshtml");
+
         }
 
         public ActionResult ContactUs()
         {
-            return View();
+            return PartialView("~/Views/Home/ContactUsPartial.cshtml");
+
         }
 
         public ActionResult RecentProjects()
         {
-            return View();
+            return PartialView("~/Views/Home/RecentProjectsPartial.cshtml");
+
+        }
+
+        public ActionResult OurClients()
+        {
+            return PartialView("~/Views/Home/OurClientsPartial.cshtml");
+
         }
     }
 }

@@ -329,9 +329,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Home\SliderPartial.cshtml" />
-    <Content Include="Views\Home\OurServices.cshtml" />
-    <Content Include="Views\Home\ContactUs.cshtml" />
-    <Content Include="Views\Home\RecentProjects.cshtml" />
+    <Content Include="Views\Home\OurServicesPartial.cshtml" />
+    <Content Include="Views\Home\ContactUsPartial.cshtml" />
+    <Content Include="Views\Home\RecentProjectsPartial.cshtml" />
+    <Content Include="Views\Home\OurClientsPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
