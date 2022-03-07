@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BuilderWebSite.Services.WebSite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,9 +7,15 @@ using System.Web.Mvc;
 
 namespace BuilderWebSite.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        // GET: Home
+        private readonly SliderService _sliderService;
+
+        public HomeController(SliderService sliderService)
+        {
+            _sliderService = sliderService;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -16,7 +23,8 @@ namespace BuilderWebSite.Controllers
 
         public ActionResult SliderPartial()
         {
-            return PartialView("~/Views/Home/SliderPartial.cshtml");
+            var model = _sliderService.GetSliderListIQueryable().ToList();
+            return PartialView("~/Views/Home/SliderPartial.cshtml", model);
 
         }
 
