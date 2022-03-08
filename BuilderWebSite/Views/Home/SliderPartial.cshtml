@@ -3,14 +3,14 @@
     <div class="fullwidthbanner-container">
         <div class="fullwidthbanner">
             <ul>
-                @foreach (var item in Model.Skip(1))
+                @foreach (var item in Model)
                 {
                     <li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
                         <img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/slide/4.jpg" data-fullwidthcentering="on" alt="slide">
                         <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">@item.ButtonText1</div>
                         <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
-                        <div class="tp-caption second-line lfb tp-resizeme start" style="font-size: 30px; word-wrap: break-word; " data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">@item.ButtonText2</div>
-                        <div class="tp-caption accent-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#" style="color:white">@item.ButtonText3</a></div>
+                        <div class="tp-caption second-line lfb tp-resizeme start" style="font-size: 30px;   " data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><h3 style=" white-space: break-spaces">@item.ButtonText2</h3></div>
+                        <div class="tp-caption accent-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#" style="color:white;">@item.ButtonText3</a></div>
                     </li>
                 }
             </ul>
