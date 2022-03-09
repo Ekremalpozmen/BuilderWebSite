@@ -12,12 +12,11 @@ namespace BuilderWebSite.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class OurServices
+    public partial class ContactUs
     {
         public long Id { get; set; }
-        public string FileName { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public string ButtonText { get; set; }
     }
 }

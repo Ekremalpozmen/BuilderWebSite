@@ -1,18 +1,27 @@
-﻿<div id="cta-2">
+﻿@model BuilderWebSite.ViewModels.WebSite.ContactUsViewModel
+
+<div id="cta-2">
     <div class="container">
         <div class="row">
+            <div class="section-heading">
+                <h2 style="color:white">Bize Ulaşın</h2>
+                <div class="line-dec"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8 col-md-offset-1">
-                <h1>Ofis Yenileme ve İç Dekorasyon Tasarım, Uygulama Projeleri</h1>
+                <h1>@Model.Title</h1>
                 <ul>
-                    
-                    <li>Dekorasyon hizmetlerine en iyisini en uygun fiyatlarla en iyi ustalarla elde edin.</li>
+                    <li style="font-size:1.2rem">@Model.Description</li>
                 </ul>
                 <div class="buttons">
                     <div class="border-accent-button contact">
-                        <a href="#">Bugün Başlayın</a>
+                        <a href="#">@Model.ButtonText</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+}

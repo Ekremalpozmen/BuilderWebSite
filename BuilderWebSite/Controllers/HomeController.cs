@@ -11,11 +11,13 @@ namespace BuilderWebSite.Controllers
     {
         private readonly SliderService _sliderService;
         private readonly OurService _ourService;
+        private readonly ContactUsService _contactUsService;
 
-        public HomeController(SliderService sliderService, OurService ourServices)
+        public HomeController(SliderService sliderService, OurService ourServices, ContactUsService contactUsService)
         {
             _sliderService = sliderService;
             _ourService = ourServices;
+            _contactUsService = contactUsService;
         }
 
         public ActionResult Index()
@@ -39,7 +41,8 @@ namespace BuilderWebSite.Controllers
 
         public ActionResult ContactUs()
         {
-            return PartialView("~/Views/Home/ContactUsPartial.cshtml");
+            var model = _contactUsService.GetContactIQueryable().FirstOrDefault();
+            return PartialView("~/Views/Home/ContactUsPartial.cshtml", model);
 
         }
 
