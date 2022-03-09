@@ -12,50 +12,56 @@ namespace BuilderWebSite.Controllers
         private readonly SliderService _sliderService;
         private readonly OurService _ourService;
         private readonly ContactUsService _contactUsService;
+        private readonly RecentProjectsService _recentProjectsService;
+        private readonly ReferencesService _referencesService;
 
-        public HomeController(SliderService sliderService, OurService ourServices, ContactUsService contactUsService)
+        public HomeController(
+            SliderService sliderService,
+            OurService ourServices,
+            ContactUsService contactUsService,
+            RecentProjectsService recentProjectsService,
+            ReferencesService referencesService
+            )
         {
             _sliderService = sliderService;
             _ourService = ourServices;
             _contactUsService = contactUsService;
+            _recentProjectsService = recentProjectsService;
+            _referencesService = referencesService;
         }
 
         public ActionResult Index()
         {
             return View();
         }
-
         public ActionResult SliderPartial()
         {
             var model = _sliderService.GetSliderListIQueryable().ToList();
             return PartialView("~/Views/Home/SliderPartial.cshtml", model);
 
         }
-
         public ActionResult OurServices()
         {
             var model = _ourService.GetOurServicesListIQueryable().ToList();
             return PartialView("~/Views/Home/OurServicesPartial.cshtml", model);
 
         }
-
         public ActionResult ContactUs()
         {
             var model = _contactUsService.GetContactIQueryable().FirstOrDefault();
             return PartialView("~/Views/Home/ContactUsPartial.cshtml", model);
 
         }
-
         public ActionResult RecentProjects()
         {
-            return PartialView("~/Views/Home/RecentProjectsPartial.cshtml");
+            var model = _recentProjectsService.GetRecentProjectsListIQueryable().ToList();
+            return PartialView("~/Views/Home/RecentProjectsPartial.cshtml", model);
 
         }
-
-        public ActionResult OurClients()
+        public ActionResult References()
         {
-            return PartialView("~/Views/Home/OurClientsPartial.cshtml");
-
+            var model = _referencesService.GetReferencesListIQueryable().ToList();
+            return PartialView("~/Views/Home/ReferencesPartial.cshtml", model);
         }
     }
 }

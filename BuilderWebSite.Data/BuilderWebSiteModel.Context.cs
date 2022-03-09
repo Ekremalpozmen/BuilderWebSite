@@ -28,5 +28,7 @@ namespace BuilderWebSite.Data
         public virtual DbSet<OurServices> OurServices { get; set; }
         public virtual DbSet<Sliders> Sliders { get; set; }
         public virtual DbSet<ContactUs> ContactUs { get; set; }
+        public virtual DbSet<RecentProjects> RecentProjects { get; set; }
+        public virtual DbSet<References> References { get; set; }
     }
 }

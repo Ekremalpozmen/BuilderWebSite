@@ -24,6 +24,8 @@ namespace BuilderWebSite
             container.Register(typeof(Services.WebSite.SliderService), new PerRequestLifeTime());
             container.Register(typeof(Services.WebSite.OurService), new PerRequestLifeTime());
             container.Register(typeof(Services.WebSite.ContactUsService), new PerRequestLifeTime());
+            container.Register(typeof(Services.WebSite.RecentProjectsService), new PerRequestLifeTime());
+            container.Register(typeof(Services.WebSite.ReferencesService), new PerRequestLifeTime());
             container.EnableMvc();
         }
     }

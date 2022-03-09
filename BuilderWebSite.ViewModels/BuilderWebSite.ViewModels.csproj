@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebSite\ContactUsViewModel.cs" />
+    <Compile Include="WebSite\RecentProjectsViewModel .cs" />
     <Compile Include="WebSite\OurServiceViewModel.cs" />
+    <Compile Include="WebSite\ReferencesViewModel.cs" />
     <Compile Include="WebSite\SliderViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

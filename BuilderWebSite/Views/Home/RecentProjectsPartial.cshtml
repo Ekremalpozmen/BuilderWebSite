@@ -1,143 +1,47 @@
-﻿<section class="recent-projects full-width">
+﻿@model List<BuilderWebSite.ViewModels.WebSite.RecentProjectsViewModel>
+
+
+
+<section class="recent-projects full-width">
     <div class="container">
         <div class="row">
             <div class="section-heading">
-                <h2>Son Projeler-Referanslar</h2>
+                <h2>Projeler</h2>
                 <div class="line-dec"></div>
             </div>
         </div>
         <div class="row">
             <div class="group">
                 @*<span class="btn filter active" data-filter="all">All Projects</span>
-                <span class="btn filter" data-filter=".category-1">Interior Design</span>
-                <span class="btn filter" data-filter=".category-2">Buildings</span>
-                <span class="btn filter" data-filter=".category-3">Constructions</span>
-                <span class="btn filter" data-filter=".category-4">Isolations</span>*@
+                    <span class="btn filter" data-filter=".category-1">Interior Design</span>
+                    <span class="btn filter" data-filter=".category-2">Buildings</span>
+                    <span class="btn filter" data-filter=".category-3">Constructions</span>
+                    <span class="btn filter" data-filter=".category-4">Isolations</span>*@
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="projects">
             <div class="row">
-                <div class="mix category-1 category-2 category-3 category-4 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/1.jpg" alt=""></a>
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                @foreach (var item in Model)
+                {
+                    <div class="mix category-1 category-2 category-3 category-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="@item.FileName" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>@item.Title</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>@item.Description</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mix category-2 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/2.jpg" alt=""></a>
+                }
 
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-3 category-4 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/3.jpg" alt=""></a>
 
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-4 category-1 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/2.jpg" alt=""></a>
-
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-3 category-4 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/1.jpg" alt=""></a>
-
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-2 category-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/3.jpg" alt=""></a>
-
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-1 category-4 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/3.jpg" alt=""></a>
-
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix category-3 category-4 col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumb-holder">
-                        <a href="single-project.html"><img src="https://puriwp.com/cocotemplates/html/innovation/assets/upload/projects/2.jpg" alt=""></a>
-
-                        <div class="thumb-content">
-                            <div class="thumb-link">
-                                <a href="single-project.html"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="thumb-text">
-                                <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-                                <span><i class="fa fa-folder-o"></i>Interior Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

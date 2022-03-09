@@ -72,6 +72,12 @@
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecentProjects.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="References.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sliders.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>

@@ -350,7 +350,7 @@
     <Content Include="Views\Home\OurServicesPartial.cshtml" />
     <Content Include="Views\Home\ContactUsPartial.cshtml" />
     <Content Include="Views\Home\RecentProjectsPartial.cshtml" />
-    <Content Include="Views\Home\OurClientsPartial.cshtml" />
+    <Content Include="Views\Home\ReferencesPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
