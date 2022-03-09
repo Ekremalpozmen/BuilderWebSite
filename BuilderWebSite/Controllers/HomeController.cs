@@ -10,10 +10,12 @@ namespace BuilderWebSite.Controllers
     public class HomeController : BaseController
     {
         private readonly SliderService _sliderService;
+        private readonly OurService _ourService;
 
-        public HomeController(SliderService sliderService)
+        public HomeController(SliderService sliderService, OurService ourServices)
         {
             _sliderService = sliderService;
+            _ourService = ourServices;
         }
 
         public ActionResult Index()
@@ -30,7 +32,8 @@ namespace BuilderWebSite.Controllers
 
         public ActionResult OurServices()
         {
-            return PartialView("~/Views/Home/OurServicesPartial.cshtml");
+            var model = _ourService.GetOurServicesListIQueryable().ToList();
+            return PartialView("~/Views/Home/OurServicesPartial.cshtml", model);
 
         }
 

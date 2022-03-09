@@ -13,6 +13,7 @@
           <Property Name="FileName" Type="nvarchar" MaxLength="100" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Active" Type="bit" />
         </EntityType>
         <EntityType Name="Sliders">
           <Key>
@@ -46,6 +47,7 @@
           <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
         </EntityType>
         <EntityType Name="Sliders">
           <Key>
@@ -76,6 +78,7 @@
           <EntitySetMapping Name="OurServices">
             <EntityTypeMapping TypeName="BuilderWebSiteModel.OurServices">
               <MappingFragment StoreEntitySet="OurServices">
+                <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

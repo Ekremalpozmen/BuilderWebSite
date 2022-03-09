@@ -40,7 +40,7 @@ namespace BuilderWebSite.Services.WebSite
         public IQueryable<SliderViewModel> GetSliderListIQueryable()
         {
             var predicate = PredicateBuilder.New<Sliders>(true);
-            predicate.And(x => x.Active);
+            predicate.And(x => (bool)x.Active);
             return _getSliderListIQueryable(predicate);
         }
 

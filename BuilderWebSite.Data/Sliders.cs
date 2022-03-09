@@ -11,14 +11,14 @@ namespace BuilderWebSite.Data
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Sliders
     {
         public long Id { get; set; }
         public string FileName { get; set; }
         public string Title { get; set; }
         public string Alt { get; set; }
-        public bool Active { get; set; }
+        public Nullable<bool> Active { get; set; }
         public string ButtonText1 { get; set; }
         public string ButtonText2 { get; set; }
         public string ButtonLink1 { get; set; }

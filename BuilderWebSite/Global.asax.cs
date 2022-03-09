@@ -22,6 +22,7 @@ namespace BuilderWebSite
             System.Net.ServicePointManager.SecurityProtocol |=
                 SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
             container.Register(typeof(Services.WebSite.SliderService), new PerRequestLifeTime());
+            container.Register(typeof(Services.WebSite.OurService), new PerRequestLifeTime());
             container.EnableMvc();
         }
     }
