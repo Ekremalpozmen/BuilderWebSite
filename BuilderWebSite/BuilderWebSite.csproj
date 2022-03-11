@@ -111,6 +111,7 @@
     <Content Include="assets\css\innovation.css" />
     <Content Include="assets\css\jquery-ui.css" />
     <Content Include="assets\css\simple-line-icons.css" />
+    <Content Include="assets\css\site.css" />
     <Content Include="assets\fonts\flaticon.svg" />
     <Content Include="assets\fonts\flexslider-icon.svg" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
@@ -199,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OurServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -352,6 +354,7 @@
     <Content Include="Views\Home\RecentProjectsPartial.cshtml" />
     <Content Include="Views\Home\ReferencesPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\OurService\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

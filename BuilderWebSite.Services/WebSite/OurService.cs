@@ -24,6 +24,7 @@ namespace BuilderWebSite.Services.WebSite
             return from s in _context.OurServices.AsExpandable().Where(expr)
                    select new OurServiceViewModel
                    {
+                       Id = (int)s.Id,
                        FileName = s.FileName,
                        Title = s.Title,
                        Description = s.Description,
@@ -38,5 +39,16 @@ namespace BuilderWebSite.Services.WebSite
             return _getOurServicesListIQueryable(predicate);
         }
 
+        public OurServiceDetailViewModel GetOurServiceDetail(int id)
+        {
+            return (from s in _context.OurServices
+                    where s.Id == id
+                    select new OurServiceDetailViewModel()
+                    {
+                        Description = s.Description,
+                        FileName = s.FileName,
+                        Title = s.Title,
+                    }).FirstOrDefault();
+        }
     }
 }

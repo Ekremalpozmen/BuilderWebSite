@@ -1,0 +1,37 @@
+﻿@model List<BuilderWebSite.ViewModels.WebSite.OurServiceViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-heading">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h2>Hizmetlerimiz</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="services">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <a href="@Url.Action("ServiceDetail","OurService", new {id=item.Id})">
+                            <img src="@item.FileName"></img>
+                        </a>
+                        <a href="@Url.Action("ServiceDetail","OurService", new {id=item.Id})">
+                            <h4>@item.Title</h4>
+                        </a>
+                        <p class="limit">@item.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
