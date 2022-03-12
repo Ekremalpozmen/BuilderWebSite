@@ -30,5 +30,7 @@ namespace BuilderWebSite.Data
         public virtual DbSet<ContactUs> ContactUs { get; set; }
         public virtual DbSet<RecentProjects> RecentProjects { get; set; }
         public virtual DbSet<References> References { get; set; }
+        public virtual DbSet<OurServiceImages> OurServiceImages { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

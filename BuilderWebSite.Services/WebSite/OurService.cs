@@ -48,6 +48,13 @@ namespace BuilderWebSite.Services.WebSite
                         Description = s.Description,
                         FileName = s.FileName,
                         Title = s.Title,
+                        ImageList = from i in s.OurServiceImages
+                                    select new ImageListViewModel()
+                                    {
+                                        FileName = i.FileName,
+                                        Title = i.Title,
+                                        Alt = i.Alt,
+                                    }
                     }).FirstOrDefault();
         }
     }

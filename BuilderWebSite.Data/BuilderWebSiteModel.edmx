@@ -14,6 +14,16 @@
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="ButtonText" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="OurServiceImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="bigint" />
+          <Property Name="FileName" Nullable="false" MaxLength="200" Type="nvarchar" />
+          <Property Name="Alt" MaxLength="100" Type="nvarchar" />
+          <Property Name="Title" MaxLength="100" Type="nvarchar" />
+          <Property Name="OurServiceId" Nullable="false" Type="bigint" />
+        </EntityType>
         <EntityType Name="OurServices">
           <Key>
             <PropertyRef Name="Id" />
@@ -58,12 +68,40 @@
           <Property Name="ButtonLink2" Type="nvarchar" MaxLength="200" />
           <Property Name="ButtonLink3" Type="nvarchar" MaxLength="350" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="principal_id" Nullable="false" Type="int" />
+          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_OurServiceImages_OurServices">
+          <End Type="Self.OurServices" Multiplicity="1" Role="OurServices" />
+          <End Type="Self.OurServiceImages" Multiplicity="*" Role="OurServiceImages" />
+          <ReferentialConstraint>
+            <Principal Role="OurServices">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OurServiceImages">
+              <PropertyRef Name="OurServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BuilderWebSiteModelStoreContainer">
           <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OurServiceImages" EntityType="Self.OurServiceImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OurServices" EntityType="Self.OurServices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RecentProjects" EntityType="Self.RecentProjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_OurServiceImages_OurServices" Association="Self.FK_OurServiceImages_OurServices">
+            <End EntitySet="OurServices" Role="OurServices" />
+            <End EntitySet="OurServiceImages" Role="OurServiceImages" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -78,6 +116,7 @@
           <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="OurServiceImages" Relationship="BuilderWebSiteModel.FK_OurServiceImages_OurServices" FromRole="OurServices" ToRole="OurServiceImages" />
         </EntityType>
         <EntityType Name="Sliders">
           <Key>
@@ -101,6 +140,12 @@
           <EntitySet Name="ContactUs" EntityType="BuilderWebSiteModel.ContactUs" />
           <EntitySet Name="RecentProjects" EntityType="BuilderWebSiteModel.RecentProjects" />
           <EntitySet Name="References" EntityType="BuilderWebSiteModel.References" />
+          <EntitySet Name="OurServiceImages" EntityType="BuilderWebSiteModel.OurServiceImages" />
+          <EntitySet Name="sysdiagrams" EntityType="BuilderWebSiteModel.sysdiagrams" />
+          <AssociationSet Name="FK_OurServiceImages_OurServices" Association="BuilderWebSiteModel.FK_OurServiceImages_OurServices">
+            <End EntitySet="OurServices" Role="OurServices" />
+            <End EntitySet="OurServiceImages" Role="OurServiceImages" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ContactUs">
           <Key>
@@ -129,6 +174,39 @@
           <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
         </EntityType>
+        <EntityType Name="OurServiceImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int64" />
+          <Property Name="FileName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Alt" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Title" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="OurServiceId" Nullable="false" Type="Int64" />
+          <NavigationProperty Name="OurServices" Relationship="BuilderWebSiteModel.FK_OurServiceImages_OurServices" FromRole="OurServiceImages" ToRole="OurServices" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="principal_id" Nullable="false" Type="Int32" />
+          <Property Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" MaxLength="Max" FixedLength="false" Type="Binary" />
+        </EntityType>
+        <Association Name="FK_OurServiceImages_OurServices">
+          <End Type="BuilderWebSiteModel.OurServices" Multiplicity="1" Role="OurServices" />
+          <End Type="BuilderWebSiteModel.OurServiceImages" Multiplicity="*" Role="OurServiceImages" />
+          <ReferentialConstraint>
+            <Principal Role="OurServices">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OurServiceImages">
+              <PropertyRef Name="OurServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -190,6 +268,28 @@
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OurServiceImages">
+            <EntityTypeMapping TypeName="BuilderWebSiteModel.OurServiceImages">
+              <MappingFragment StoreEntitySet="OurServiceImages">
+                <ScalarProperty Name="OurServiceId" ColumnName="OurServiceId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Alt" ColumnName="Alt" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BuilderWebSiteModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

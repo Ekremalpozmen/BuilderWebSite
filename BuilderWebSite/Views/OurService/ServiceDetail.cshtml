@@ -1,0 +1,39 @@
+﻿@model BuilderWebSite.ViewModels.WebSite.OurServiceDetailViewModel
+@{
+    ViewBag.Title = "ServiceDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-heading">
+    <div class="container">
+     
+    </div>
+</div>
+
+<section class="single-project">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left-info">
+                    <h4>@Model.Title</h4>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="right-content">
+
+                    <div class="under-single">
+                        <div class="row">
+                            @foreach (var item in Model.ImageList)
+                            {
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="@item.FileName" alt="">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

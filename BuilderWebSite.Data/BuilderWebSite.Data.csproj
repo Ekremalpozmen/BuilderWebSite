@@ -68,6 +68,9 @@
     <Compile Include="ContactUs.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OurServiceImages.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="OurServices.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
@@ -79,6 +82,9 @@
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Sliders.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -355,6 +355,7 @@
     <Content Include="Views\Home\ReferencesPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\OurService\Index.cshtml" />
+    <Content Include="Views\OurService\ServiceDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

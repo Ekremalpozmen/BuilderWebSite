@@ -12,21 +12,14 @@ namespace BuilderWebSite.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class OurServices
+    public partial class OurServiceImages
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OurServices()
-        {
-            this.OurServiceImages = new HashSet<OurServiceImages>();
-        }
-    
         public long Id { get; set; }
         public string FileName { get; set; }
+        public string Alt { get; set; }
         public string Title { get; set; }
-        public string Description { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public long OurServiceId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OurServiceImages> OurServiceImages { get; set; }
+        public virtual OurServices OurServices { get; set; }
     }
 }
