@@ -202,6 +202,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OurServiceController.cs" />
+    <Compile Include="Controllers\RecentProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -358,6 +359,7 @@
     <Content Include="Views\OurService\Index.cshtml" />
     <Content Include="Views\OurService\ServiceDetail.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\RecentProjects\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

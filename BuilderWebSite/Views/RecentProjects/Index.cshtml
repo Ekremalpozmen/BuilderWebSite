@@ -1,0 +1,43 @@
+﻿@model List<BuilderWebSite.ViewModels.WebSite.RecentProjectsViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-heading">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h2>PROJELERIMIZ</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="projects-page full-width">
+    <div>
+        <div class="container-fluid">
+            <div class="projects">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="mix category-1 category-2 category-3 category-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="thumb-holder">
+                                <a href="single-project.html"><img src="@item.FileName" alt=""></a>
+                                <div class="thumb-content">
+                                    <div class="thumb-link">
+                                        <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                    <div class="thumb-text">
+                                        <a href="single-project.html"><h4>@item.Title</h4></a>
+                                        <span><i class="fa fa-folder-o"></i>@item.Description</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
