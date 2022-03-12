@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="BuilderWebSiteModel.OurServiceImages" PointX="3" PointY="7.75" Width="1.5" />
         <EntityTypeShape EntityType="BuilderWebSiteModel.sysdiagrams" PointX="5.375" PointY="3.75" Width="1.5" />
         <AssociationConnector Association="BuilderWebSiteModel.FK_OurServiceImages_OurServices" />
+        <EntityTypeShape EntityType="BuilderWebSiteModel.About" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

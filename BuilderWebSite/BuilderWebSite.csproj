@@ -198,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OurServiceController.cs" />
@@ -356,6 +357,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\OurService\Index.cshtml" />
     <Content Include="Views\OurService\ServiceDetail.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,33 @@
+﻿@model BuilderWebSite.ViewModels.WebSite.AboutViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-heading">
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+
+<section class="expert-field">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="left-image">
+                    <img src="@Model.FileName" alt="">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="expert-content">
+                    <h4>@Model.Title</h4>
+                    <div class="line-dec"></div>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
