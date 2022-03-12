@@ -6,7 +6,7 @@
 
 <div id="page-heading">
     <div class="container">
-     
+
     </div>
 </div>
 
@@ -26,8 +26,11 @@
                         <div class="row">
                             @foreach (var item in Model.ImageList)
                             {
+
                                 <div class="col-md-6 col-sm-12">
-                                    <img src="@item.FileName" alt="">
+                                    <a href="@item.FileName" data-fancybox="productImage" data-caption="@Model.Title">
+                                        <img src="@item.FileName" alt="" />
+                                    </a>
                                 </div>
                             }
                         </div>
