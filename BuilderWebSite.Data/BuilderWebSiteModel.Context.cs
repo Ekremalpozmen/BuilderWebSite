@@ -34,5 +34,6 @@ namespace BuilderWebSite.Data
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<About> About { get; set; }
         public virtual DbSet<ContactForm> ContactForm { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -93,6 +93,9 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="BuilderWebSiteModel.edmx">
