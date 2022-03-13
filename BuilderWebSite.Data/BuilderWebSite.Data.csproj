@@ -68,6 +68,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BuilderWebSiteModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ContactForm.cs">
+      <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ContactUs.cs">
       <DependentUpon>BuilderWebSiteModel.tt</DependentUpon>
     </Compile>
