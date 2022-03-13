@@ -14,14 +14,11 @@
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="FileName" Type="nvarchar" MaxLength="80" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BuilderWebSite.dbo.ContactForm' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ContactForm">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Date" />
           </Key>
-          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="100" />
           <Property Name="Subject" Type="nvarchar" MaxLength="250" />
           <Property Name="Mail" Type="nvarchar" MaxLength="100" />
@@ -116,6 +113,7 @@ warning 6002: The table/view 'BuilderWebSite.dbo.ContactForm' does not have a pr
         </Association>
         <EntityContainer Name="BuilderWebSiteModelStoreContainer">
           <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OurServiceImages" EntityType="Self.OurServiceImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OurServices" EntityType="Self.OurServices" Schema="dbo" store:Type="Tables" />
@@ -123,17 +121,6 @@ warning 6002: The table/view 'BuilderWebSite.dbo.ContactForm' does not have a pr
           <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ContactForm].[Id] AS [Id], 
-    [ContactForm].[FullName] AS [FullName], 
-    [ContactForm].[Subject] AS [Subject], 
-    [ContactForm].[Mail] AS [Mail], 
-    [ContactForm].[Phone] AS [Phone], 
-    [ContactForm].[Message] AS [Message], 
-    [ContactForm].[Date] AS [Date]
-    FROM [dbo].[ContactForm] AS [ContactForm]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_OurServiceImages_OurServices" Association="Self.FK_OurServiceImages_OurServices">
             <End Role="OurServices" EntitySet="OurServices" />
             <End Role="OurServiceImages" EntitySet="OurServiceImages" />
@@ -257,9 +244,8 @@ warning 6002: The table/view 'BuilderWebSite.dbo.ContactForm' does not have a pr
         <EntityType Name="ContactForm">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Date" />
           </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
