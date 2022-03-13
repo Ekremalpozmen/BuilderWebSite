@@ -1,4 +1,18 @@
-﻿<header class="site-header">
+﻿<div id="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left-info">
+                    <ul>
+                        <li><i class="fa fa-phone"></i>05555555555</li>
+                        <li><i class="fa fa-envelope-o"></i>ekrem3792@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="site-header">
     <div id="main-header" class="main-header header-sticky">
         <div class="inner-header container clearfix">
             <div class="logo">
@@ -11,10 +25,9 @@
                 <ul>
                     <li>
                         <a href="@Url.Action("Index", "Home")" class="has-submenu">AnaSayfa</a>
-
                     </li>
                     <li>
-                        <a href="#" class="has-submenu">Hakkımızda</a>
+                        <a href="@Url.Action("Index", "About")" class="has-submenu">Hakkımızda</a>
                     </li>
                     <li>
                         <a href="@Url.Action("Index", "OurService")" class="has-submenu">Hizmetlerimiz</a>
